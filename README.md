@@ -42,6 +42,7 @@ This tool requires the following packages installed:
   ```bash
   sudo chmod +x /usr/local/bin/music-dlp
   ```
+- Usage: Once installed, you can launch the application from any directory by simply typing music-dlp in your terminal
 
 ### Versión en Español (Binario):
 - Descarga el binario con el nombre music-dlp-esp.
@@ -53,6 +54,7 @@ This tool requires the following packages installed:
   ```bash
   sudo chmod +x /usr/local/bin/music-dlp
   ```
+- Uso: Una vez instalado, puedes iniciar la aplicación desde cualquier directorio simplemente escribiendo music-dlp en tu terminal
 
 ### Uso desde el código fuente (Source Code):
 *Currently only available in Spanish / Actualmente solo disponible en español*
@@ -71,6 +73,13 @@ This tool requires the following packages installed:
 *Nota sobre el código fuente:*
 *La limitación de utilizar esta versión es que el script no es ejecutable de forma global. Para iniciar la aplicación, es necesario que la terminal se encuentre ubicada dentro del directorio del proyecto.*
 
+## Storage
+- Automatic Organization: Downloads are automatically stored in your system's Music folder, neatly organized by Artist and Album/Single/EP subdirectories.
+  Note: A feature to select custom download paths is planned for future updates.
+
+- Organización Automática: Las descargas se almacenan automáticamente en la carpeta de Música de tu sistema, organizadas por subdirectorios de Artista y Álbum/Single/EP.
+  Nota: Próximamente se implementará una función para elegir carpetas de almacenamiento personalizadas.
+  
 ## Author's Notes
 
 - I created this project for personal use and as a way to deepen my knowledge of scripting and Dialog. However, if you find it helpful, you are more than welcome to use it.
