@@ -33,25 +33,25 @@ This tool requires the following packages installed:
 ## Installation
 
 ### English version (Bin):
-- Download the music_dlp binary.
+- Download the music-dlp binary.
 - Copy the binary to the appropriate directory using the following command:
   ```bash
-  sudo mv music_dlp /usr/local/bin/music_dlp
+  sudo mv music-dlp /usr/local/bin/music-dlp
   ```
 - Grant the necessary execution permissions with the following command:
   ```bash
-  sudo chmod +x /usr/local/bin/music_dlp
+  sudo chmod +x /usr/local/bin/music-dlp
   ```
 
 ### Versión en Español (Binario):
-- Descarga el binario con el nombre music_dlp_esp.
+- Descarga el binario con el nombre music-dlp-esp.
 - Copia el binario a la carpeta correspondiente con el siguiente comando:
   ```bash
-  sudo mv music_dlp_esp /usr/local/bin/music_dlp
+  sudo mv music-dlp-esp /usr/local/bin/music-dlp
   ```
 - Otorga los permisos de ejecución necesarios con el siguiente comando:
   ```bash
-  sudo chmod +x /usr/local/bin/music_dlp
+  sudo chmod +x /usr/local/bin/music-dlp
   ```
 
 ### Uso desde el código fuente (Source Code):
@@ -61,7 +61,7 @@ This tool requires the following packages installed:
 - Elimine la carpeta bin y continue con estos pasos desde la terminal
 - Otorgue permisos de ejecución con el siguiente comando:
   ```bash
-  chmod +x music_dlp.sh
+  chmod +x music-dlp_sh
   ```
 - Ejecute la interfaz (TUI) con el siguiente comando:
   ```bash
