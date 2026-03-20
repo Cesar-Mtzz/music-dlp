@@ -8,6 +8,8 @@
 # License: MIT
 # =====================================================================
 
+menuActual=0
+
 #Descargar en segundo plano:
 descarga(){
     (
@@ -41,7 +43,7 @@ descarga(){
     ) | dialog --gauge "Descargando...\nPor favor espera" 10 70 0
 }
 
-#Mostrar la lista de archivos descargados
+# Mostrar la lista de archivos descargados
 listar_descargas(){
 
     lista=$(ls -1 "${RUTA_MUSICA}/${artista}/${nombre}" 2>/dev/null)
@@ -53,10 +55,31 @@ listar_descargas(){
     --msgbox "${mensaje}" 20 60
 }
 
+# Mostrar mensaje de advertencia.
+mensaje_advertencia(){
+    mensaje=$(printf "Debe ingresar todos los datos solicitados para poder comenzar con la descarga.\nLos datos ingresados son:\n\nURL: %s\nArtista: %s\nNombre: %s" "${url}" "${artista}" "${nombre}")
+
+    dialog --title " Información incompleta " \
+    --msgbox "${mensaje}" 15 40
+}
+
+# Comprobar que el utl, nombre y artista no esta vacia
+comp_datos(){
+    if [[ -z "${url}" || -z "${nombre}" || -z "${artista}" ]]; then
+        if [ "${menuActual}" -eq 1 ]; then
+            mensaje_advertencia
+            album_individual
+        else
+            mensaje_advertencia
+            album
+        fi
+    fi
+}
+
 # Formulario que requiere de ingresar el nombre del artista
 album_individual(){
-    clear
-    
+    menuActual=1
+
     #Formulario para la descarga:
     DESCARGA_INDIVIDUAL=$( 
         dialog \
@@ -76,31 +99,27 @@ album_individual(){
     nombre=$(echo "${DESCARGA_INDIVIDUAL}" | sed -n 3p)
     
     mkdir -p "${RUTA_MUSICA}/${artista}/${nombre}"
-        
-    clear
     
+    comp_datos
+
     descarga
     
-    clear
-
     listar_descargas
-
-    clear
 
     menu_secundario 
 }
 
 #Formulario que no requiere de ingresar el nombre del artista
 album(){
-    clear
-    
+    menuActual=2
+
     #Formulario para la descarga:
     DESCARGA=$( 
         dialog \
             --nocancel \
             --title "Descargar álbum/single ${artista} "   \
             --separate-widget $"\n"               \
-            --form  "Introduce tus datos"         \
+           --form  "Introduce tus datos"         \
                     0 0 0                                 \
                     "URL:"     1 1 "$url"      1 15 40 0 \
                     "Nombre:" 2 1 "$nombre"  2 15 40 0 \
@@ -112,15 +131,11 @@ album(){
 
     mkdir -p "${RUTA_MUSICA}/${artista}/${nombre}"
         
-    clear
-    
+    comp_datos
+
     descarga
 
-    clear
-
     listar_descargas
-
-    clear
 
     menu_secundario
 }
