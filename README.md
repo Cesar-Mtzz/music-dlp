@@ -61,7 +61,7 @@ This tool requires the following packages installed:
 *Currently only available in Spanish / Actualmente solo disponible en español*
 
 - Descargue el archivo .zip del repositorio y entre en la carpeta del proyecto
-- Elimine la carpeta bin y continue con estos pasos desde la terminal
+<!-- - Elimine la carpeta bin y continue con estos pasos desde la terminal -->
 - Otorgue permisos de ejecución con el siguiente comando:
   ```bash
   chmod +x music-dlp_sh
