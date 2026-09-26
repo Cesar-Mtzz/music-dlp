@@ -31,7 +31,7 @@ This tool requires the following packages installed:
   ```
 
 ## Installation
-
+<!--
 ### English version (Bin) *Not Working*:
 - Download the music-dlp binary.
 - Copy the binary to the appropriate directory using the following command:
@@ -55,8 +55,9 @@ This tool requires the following packages installed:
   sudo chmod +x /usr/local/bin/music-dlp
   ```
 - Uso: Una vez instalado, puedes iniciar la aplicación desde cualquier directorio simplemente escribiendo music-dlp en tu terminal
+-->
 
-### Uso desde el código fuente (Source Code) *Working*:
+### Uso desde el código fuente (Source Code):
 *Currently only available in Spanish / Actualmente solo disponible en español*
 
 - Descargue el archivo .zip del repositorio y entre en la carpeta del proyecto
